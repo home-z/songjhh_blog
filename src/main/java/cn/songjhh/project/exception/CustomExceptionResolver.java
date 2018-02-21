@@ -1,5 +1,4 @@
-package cn.songjhh.project.exception;
-
+ package cn.songjhh.project.exception;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
