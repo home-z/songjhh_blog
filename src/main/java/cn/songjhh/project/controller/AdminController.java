@@ -1,7 +1,7 @@
 package cn.songjhh.project.controller;
 
-import cn.songjhh.project.mapper.user.UserMapper;
-import cn.songjhh.project.po.user.User;
+//import cn.songjhh.project.mapper.user.UserMapper;
+//import cn.songjhh.project.po.user.User;
 import cn.songjhh.project.po.user.UserCustom;
 import cn.songjhh.project.po.user.UserQueryVo;
 import cn.songjhh.project.service.UserService;
