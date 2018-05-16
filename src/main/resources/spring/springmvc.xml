@@ -21,7 +21,7 @@
     <context:component-scan base-package="cn.songjhh.project.controller"></context:component-scan>
 	
 	<!-- 在原项目spring文件上新增的配置行 -->
-	<mvc:annotation-scan/>
+	<!-- <mvc:annotation-scan/> -->
 	
 	<!-- 配置<mvc:default-servlet-handler />后，会在Spring MVC上下文中定义一个
 	org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler，
