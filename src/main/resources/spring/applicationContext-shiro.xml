@@ -117,7 +117,7 @@
         <property name="authorizationCacheName" value="authorizationCache" />
     </bean>
 
-    <!-- 安全管理器 -->
+    <!-- 安全管理器 安全认证框架-apache shiro-->
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="realm" ref="myRealm"/>
         <property name="rememberMeManager" ref="rememberMeManager"/>

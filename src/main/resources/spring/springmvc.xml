@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- <import resource="classpath*:/applicationContext-shiro.xml"/> -->
+
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
        xmlns:aop="http://www.springframework.org/schema/aop"
@@ -12,13 +14,13 @@
                http://www.springframework.org/schema/beans
                http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
                
-               
 
-    <mvc:annotation-driven conversion-service="conversionService" validator="validator"></mvc:annotation-driven>
+		 <mvc:annotation-driven /><!-- 替换下面 -->
+<!--     <mvc:annotation-driven conversion-service="conversionService" validator="validator"></mvc:annotation-driven> -->
 	
 	<!-- <context:component-scan/>标签是告诉Spring 来扫描指定包下的类，
 	并注册被@Component，@Controller，@Service，@Repository等注解标记的组件 -->
-    <context:component-scan base-package="cn.songjhh.project.controller"></context:component-scan>
+    	<context:component-scan base-package="cn.songjhh.project.controller"></context:component-scan>
 	
 	<!-- 在原项目spring文件上新增的配置行 -->
 	<!-- <mvc:annotation-scan/> -->
@@ -50,16 +52,17 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!--自定义参数绑定-->
-    <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
-        <!--转换器-->
-        <property name="converters">
-            <!--<list>-->
-            <!--日期类型转换-->
-            <bean class="cn.songjhh.project.controller.converter.CustomDataConverter"/>
-            <!--</list>-->
-        </property>
-    </bean>
+    <!--自定义参数绑定 报问题https://axiu.me/coding/spring-resources-conversionfailedexception/
+    		已用<mvc:annotation-driven />替换 -->
+<!--     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean"> -->
+<!--         转换器 -->
+<!--         <property name="converters"> -->
+<!--             <list> -->
+<!--             日期类型转换 -->
+<!--             <bean class="cn.songjhh.project.controller.converter.CustomDataConverter"/> -->
+<!--             </list> -->
+<!--         </property> -->
+<!--     </bean> -->
 
     <!--检验器-->
     <bean id="validator"
@@ -118,4 +121,12 @@
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
         <property name="securityManager" ref="securityManager"/>
     </bean>
+    
+    <!-- 安全认证框架-apache shiro 5/29/2018-->
+<!--     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager"> -->
+	<!-- realm认证和授权,从数据库读取资源 -->
+<!--             <property name="realm" ref="shiroDbRealm" /> -->
+	<!-- cacheManager,集合spring缓存工厂 -->
+<!--             <property name="cacheManager" ref="shiroMemCachedManager" /> -->
+<!-- 	</bean> -->
 </beans>

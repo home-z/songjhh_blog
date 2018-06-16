@@ -10,19 +10,23 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
-  <!--shiro过滤器定义-->
-<!--   <filter> -->
-<!--     <filter-name>shiroFilter</filter-name> -->
-<!--     <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class> -->
-<!--     <init-param> -->
-<!--       <param-name>targetFilterLifecycle</param-name> -->
-<!--       <param-value>true</param-value> -->
-<!--     </init-param> -->
-<!--   </filter> -->
-<!--   <filter-mapping> -->
-<!--     <filter-name>shiroFilter</filter-name> -->
-<!--     <url-pattern>/</url-pattern> -->
-<!--   </filter-mapping> -->
+<!--   shiro过滤器定义 -->
+  <filter>
+    <filter-name>shiroFilter</filter-name>
+    <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    <init-param>
+      <param-name>targetFilterLifecycle</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>shiroFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <!-- No SecurityManager accessible to the calling code, either
+   bound to the org.apache.shiro.util.ThreadContext or as a vm static
+    singleton.  This is an invalid application configuration
+    登陆页打不开报500 原因shirofilter过滤器的map为“/”，正确应为“/*” -->
 
   <!--spring配置文件-->
   <context-param>

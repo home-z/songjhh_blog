@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<!-- Shiro 权限标签-->
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <div id="top-col">
         <div class="navbar navbar-inverse" style="margin-bottom: inherit;background: #575757;border: none">
             <div class="navbar-header">
