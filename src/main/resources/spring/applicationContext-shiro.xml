@@ -21,7 +21,7 @@
         <!--cookie的name，我故意取名叫xxxxbaidu -->
         <constructor-arg value="v_v-s-baidu"/>
         <property name="httpOnly" value="true"/>
-        <!--cookie的有效时间 -->
+        <!--cookie的有效时间  值为-1表示关闭浏览器关闭时此cookie失效-->
         <property name="maxAge" value="-1"/>
         <!-- 配置存储Session Cookie的domain为 一级域名
         <property name="domain" value=".itboy.net"/>

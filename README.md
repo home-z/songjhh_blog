@@ -24,5 +24,5 @@
 - 通过shiro框架，能够并发控制登录人数，后登录会顶替掉先登录的账号。同时启用了RememberMe功能，关闭浏览器下次再访问时无须再登录即可访问，但如修改个人信息等重要操作上还需进行身份认证。
 
 -----------
-	ryen：该项目的初始开发工具为idea，本人导入eclipse后不能直接使用。
-		 当前使用环境tomcat9+maven+git+mysql+eclipse
+-该项目从原作者的git获取时其使用的开发工具为idea，本人导入eclipse后不能直接开发。另外缺少db连接文件，现已加上；
+  当前使用环境tomcat9+maven+git+mysql+eclipse 2018/6/16
